@@ -67,12 +67,12 @@ func (ds *DS) Init() {
 	logrus.Infoln("Init update channel.")
 	ds.update = make(chan string, 20)
 
-	// logrus.Infoln("Init commit repo.")
-	// if ds.GithubToken == "" {
-	// 	utils.ErrorExit("Github Token is blank!", 1)
-	// }
-	// ds.commitURL = "https://" + ds.GithubToken + "@github.com/" + ds.GithubRepo + ".git"
-	// ds.Clone()
+	logrus.Infoln("Init commit repo.")
+	if ds.GithubToken == "" {
+		utils.ErrorExit("Github Token is blank!", 1)
+	}
+	ds.commitURL = "https://" + ds.GithubToken + "@github.com/" + ds.GithubRepo + ".git"
+	ds.Clone()
 
 	logrus.Infoln("Init success...")
 }

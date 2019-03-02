@@ -51,14 +51,12 @@ func (ds *DS) Process(imageName string) {
 			Password: ds.DockerPassword,
 		}
 		encodedJSON, err := jsoniter.Marshal(authConfig)
-		logrus.Infof("encodedJSON is %v,err is %v", encodedJSON, err)
 		if !utils.CheckErr(err) {
 			logrus.Errorln("Failed to marshal docker config")
 			return
 		}
 		authStr := base64.URLEncoding.EncodeToString(encodedJSON)
 		r, err = ds.dockerClient.ImagePush(ctx, newImageName, types.ImagePushOptions{RegistryAuth: authStr})
-		logrus.Infof("r is %v,err is %v", r, err)
 		if !utils.CheckErr(err) {
 			logrus.Errorf("Failed to push image: %s", newImageName)
 			return
