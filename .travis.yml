@@ -13,9 +13,8 @@ go:
 
 script:
   - GO111MODULE=on go get github.com/scolib/docksync
-  - docksync sync --debug --querylimit 20 --processlimit 10 --httptimeout 10s --user ${DOCKER_USER} --password ${DOCKER_PASSWORD} --org scolib --githubtoken ${GITHUB_TOKEN}  --imagesregistry gitlab --repositories cfssl-self-sign
-#  - docksync sync --querylimit 20 --processlimit 10 --httptimeout 10s --user ${DOCKER_USER} --password ${DOCKER_PASSWORD} --githubtoken ${GITHUB_TOKEN}  --imagesregistry gitlab --repositories cfssl-self-sign,gitlab-task-runner-ce,gitlab-unicorn-ce,kubectl,alpine-certificates
-#  - docksync sync --querylimit 20 --processlimit 10 --httptimeout 10s --user ${DOCKER_USER} --password ${DOCKER_PASSWORD} --githubtoken ${GITHUB_TOKEN}  --imagesregistry gitlab --repositories gitlab-shell,gitaly,gitlab-sidekiq-ce,gitlab-rails-ce,gitlab-workhorse-ce
-#  - docksync sync --querylimit 20 --processlimit 10 --httptimeout 10s --user ${DOCKER_USER} --password ${DOCKER_PASSWORD} --githubtoken ${GITHUB_TOKEN} --imagesregistry quay --namespace kubernetes-ingress-controller --repositories nginx-ingress-controller
-#  - docksync sync --querylimit 20 --processlimit 10 --httptimeout 10s --user ${DOCKER_USER} --password ${DOCKER_PASSWORD} --githubtoken ${GITHUB_TOKEN} --imagesregistry quay --namespace jetstack --repositories cert-manager-controller,cert-manager-webhook
-#  - docksync sync --querylimit 20 --processlimit 10 --httptimeout 10s --user ${DOCKER_USER} --password ${DOCKER_PASSWORD} --githubtoken ${GITHUB_TOKEN} --imagesregistry gcr --namespace google-containers --repositories defaultbackend
+  - docksync sync --querylimit 20 --processlimit 10 --httptimeout 10s --user ${DOCKER_USER} --password ${DOCKER_PASSWORD} --org scolib --githubtoken ${GITHUB_TOKEN}  --imagesregistry gitlab --repositories cfssl-self-sign,gitlab-task-runner-ce,gitlab-unicorn-ce,kubectl,alpine-certificates
+  - docksync sync --querylimit 20 --processlimit 10 --httptimeout 10s --user ${DOCKER_USER} --password ${DOCKER_PASSWORD} --org scolib --githubtoken ${GITHUB_TOKEN}  --imagesregistry gitlab --repositories gitlab-shell,gitaly,gitlab-sidekiq-ce,gitlab-rails-ce,gitlab-workhorse-ce
+  - docksync sync --querylimit 20 --processlimit 10 --httptimeout 10s --user ${DOCKER_USER} --password ${DOCKER_PASSWORD} --org scolib --githubtoken ${GITHUB_TOKEN} --imagesregistry quay --namespace kubernetes-ingress-controller --repositories nginx-ingress-controller
+  - docksync sync --querylimit 20 --processlimit 10 --httptimeout 10s --user ${DOCKER_USER} --password ${DOCKER_PASSWORD} --org scolib --githubtoken ${GITHUB_TOKEN} --imagesregistry quay --namespace jetstack --repositories cert-manager-controller,cert-manager-webhook
+  - docksync sync --querylimit 20 --processlimit 10 --httptimeout 10s --user ${DOCKER_USER} --password ${DOCKER_PASSWORD} --org scolib --githubtoken ${GITHUB_TOKEN} --imagesregistry gcr --namespace google-containers --repositories defaultbackend
