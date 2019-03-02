@@ -46,5 +46,5 @@ func init() {
 	rootCmd.PersistentFlags().StringVar(&githubRepo, "githubrepo", "klgd/ds-changelog", "github commit repo")
 	rootCmd.PersistentFlags().StringVar(&githubToken, "githubtoken", "", "github commit token")
 	rootCmd.PersistentFlags().StringVar(&imagesRegistry, "imagesregistry", "gitlab", "images registry(gitlab|quay|gcr)")
-	rootCmd.PersistentFlags().StringSliceVar(&repositories, "repositories", []string{}, "images repository")
+	rootCmd.PersistentFlags().StringSliceVarP(&repositories, "repositories", "r", []string{}, "images repository")
 }
