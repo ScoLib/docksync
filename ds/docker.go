@@ -20,10 +20,10 @@ func (ds *DS) Process(imageName string) {
 	ctx := context.Background()
 
 	oldImageName := ds.getOldImageName(imageName)
-	logrus.Infof("oldImageName: %s", oldImageName)
+	// logrus.Infof("oldImageName: %s", oldImageName)
 
 	newImageName := "docker.io/" + ds.dockerRegistry() + "/" + imageName
-	logrus.Infof("newImageName: %s", newImageName)
+	// logrus.Infof("newImageName: %s", newImageName)
 
 	if !ds.TestMode {
 
