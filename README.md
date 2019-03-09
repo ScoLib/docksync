@@ -1,4 +1,4 @@
-# docksync [![Build Status](https://travis-ci.org/ScoLib/docksync.svg?branch=master)](https://travis-ci.org/ScoLib/docksync)
+# docksync [![Build Status](https://travis-ci.com/ScoLib/docksync.svg?branch=master)](https://travis-ci.com/ScoLib/docksync)
 
 A docker image sync tool
 
